@@ -16,16 +16,19 @@ public class Employee {
     private String city;
     private String country;
     private String phone;
+    private String email;
     private String supervisor;
+   
     
-    public Employee(int id, String firstName, String lastName, String title, String city, String country, String phone, String supervisor){
+    public Employee(int id, String firstName, String lastName, String title, String city, String country, String phone,String email, String supervisor){
         this.id = id;
-        this.firstName = firstName;
+        this.firstName = firstName; 
         this.lastName = lastName;
         this.title = title;
         this.city = city;
         this.country = country;
         this.phone = phone;
+        this.email = email;
         this.supervisor = supervisor;
     }
     
@@ -49,6 +52,9 @@ public class Employee {
     }
     public String getPhone(){ 
         return phone; 
+    }
+    public String getEmail(){ 
+        return email; 
     }
     public String getSupervisor(){ 
         return supervisor;

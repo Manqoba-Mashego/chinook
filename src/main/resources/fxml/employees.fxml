@@ -3,13 +3,16 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/26" fx:controller="com.u24589137.u24589137_chinook.controllers.EmployeesController">
-    <top>
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      xmlns="http://javafx.com/javafx/26"
+      spacing="10"
+      fx:controller="com.u24589137.u24589137_chinook.controllers.EmployeesController">
+
+    <children>
         <TextField fx:id="searchField" promptText="Search by name or city..." />
-    </top>
-    <center>
+
         <TableView fx:id="table">
             <columns>
                 <TableColumn fx:id="firstNameCol" text="First Name" />
@@ -18,11 +21,14 @@
                 <TableColumn fx:id="cityCol" text="City" />
                 <TableColumn fx:id="countryCol" text="Country" />
                 <TableColumn fx:id="phoneCol" text="Phone" />
+                <TableColumn fx:id="emailCol" text="Email" />
                 <TableColumn fx:id="supervisorCol" text="Supervisor" />
+                <TableColumn fx:id="isActiveCol" text="Is Active" />
             </columns>
-         <columnResizePolicy>
-            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-         </columnResizePolicy>
+
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
         </TableView>
-    </center>
-</BorderPane>
+    </children>
+</VBox>

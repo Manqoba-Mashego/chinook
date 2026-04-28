@@ -17,7 +17,7 @@ import java.util.List;
  * @author manqo
  */
 public class EmployeeDAO {
-    public static List<Employee> getEmployees() {
+    public static List<Employee> getEmployees(){
         List<Employee> list = new ArrayList<>();
 
         try (Connection conn = DBConnection.connect()) {
@@ -38,6 +38,7 @@ public class EmployeeDAO {
                         rs.getString("City"),
                         rs.getString("Country"),
                         rs.getString("Phone"),
+                        rs.getString("Email"),
                         rs.getString("Supervisor")
                 )); 
             }
