@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/26"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.u24589137.u24589137_chinook.controllers.NotificationsController">
+
+    <TableView fx:id="customerTable">
+        <columns>
+            <TableColumn fx:id="firstCol" text="First Name"/>
+            <TableColumn fx:id="lastCol" text="Last Name"/>
+            <TableColumn fx:id="emailCol" text="Email"/>
+            <TableColumn fx:id="phoneCol" text="Phone"/>
+            <TableColumn fx:id="addressCol" text="Address"/>
+            <TableColumn fx:id="cityCol" text="City"/>
+            <TableColumn fx:id="countryCol" text="Country"/>
+        </columns>
+    </TableView>
+
+    <Button text="Add" onAction="#addCustomer"/>
+    <Button text="Edit" onAction="#editCustomer"/>
+    <Button text="Delete" onAction="#deleteCustomer"/>
+
+</VBox>

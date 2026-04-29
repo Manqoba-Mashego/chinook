@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.u24589137.u24589137_chinook.controllers.ReportController">
+
+    <TableView fx:id="reportTable">
+        <columns>
+            <TableColumn fx:id="genreCol" text="Genre" />
+            <TableColumn fx:id="revenueCol" text="Total Revenue" />
+        </columns>
+      <columnResizePolicy>
+         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+      </columnResizePolicy>
+    </TableView>
+
+</VBox>

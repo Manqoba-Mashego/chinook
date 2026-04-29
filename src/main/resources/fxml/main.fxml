@@ -19,8 +19,16 @@
                         <fx:include source="tracks.fxml" />
                     </content>
                 </Tab>
-                <Tab text="Reports" />
-                <Tab text="Notifications" />
+                <Tab text="Reports" fx:id="reportsTab">
+                    <content>
+                        <fx:include source="reports.fxml"/>
+                    </content>
+                </Tab>
+                <Tab text="Notifications" >
+                    <content>
+                        <fx:include source="notifications.fxml" />
+                    </content>
+                </Tab>
                 <Tab text="Recommendations" />
             </tabs>
         </TabPane>
