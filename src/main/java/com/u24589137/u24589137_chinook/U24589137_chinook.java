@@ -21,6 +21,9 @@ public class U24589137_chinook extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/main.fxml"));
         Scene scene = new Scene(loader.load());
+        scene.getStylesheets().add(
+            getClass().getResource("/css/style.css").toExternalForm()
+        );
         stage.setScene(scene);
         stage.setMaximized(true);
         stage.show();

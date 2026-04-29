@@ -25,6 +25,7 @@ public class NotificationsController {
     @FXML private TableColumn<Customer, String> countryCol;
     @FXML private TableColumn<Customer, String> addressCol;
     @FXML private TableColumn<Customer, String> cityCol;
+    @FXML private TextField searchField;
 
     @FXML
     public void initialize() {
@@ -35,6 +36,23 @@ public class NotificationsController {
         countryCol.setCellValueFactory(new PropertyValueFactory<>("country"));
         addressCol.setCellValueFactory(new PropertyValueFactory<>("address"));
         cityCol.setCellValueFactory(new PropertyValueFactory<>("city"));
+        searchField.textProperty().addListener((obs, oldVal, newVal) -> {
+            filterCustomers(newVal);
+        });
+        refreshTable();
+    }
+
+    @FXML
+    private void loadInactiveCustomers() {
+        customerTable.setItems(
+            FXCollections.observableArrayList(
+                CustomerDAO.getInactiveCustomers()
+            )
+        );
+    }
+
+    @FXML
+    private void loadAllCustomers() {
         refreshTable();
     }
 
@@ -45,6 +63,20 @@ public class NotificationsController {
             )
         );
     }
+
+    private void filterCustomers(String keyword) {
+    var allCustomers = CustomerDAO.getCustomers();
+
+    var filtered = allCustomers.stream()
+        .filter(c ->
+            c.getFirstName().toLowerCase().contains(keyword.toLowerCase()) ||
+            c.getLastName().toLowerCase().contains(keyword.toLowerCase()) ||
+            c.getCountry().toLowerCase().contains(keyword.toLowerCase())
+        )
+        .toList();
+
+    customerTable.setItems(FXCollections.observableArrayList(filtered));
+}
 
     @FXML
     private void addCustomer() {
@@ -92,7 +124,7 @@ public class NotificationsController {
             cityField,
             countryField,
             companyField,
-            stateField,
+            stateField, 
             postalCodeField,
             faxField
         );

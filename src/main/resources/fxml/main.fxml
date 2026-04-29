@@ -29,7 +29,11 @@
                         <fx:include source="notifications.fxml" />
                     </content>
                 </Tab>
-                <Tab text="Recommendations" />
+                <Tab text="Recommendations" >
+                    <content>
+                        <fx:include source="recommendation.fxml" />
+                    </content>
+                </Tab>
             </tabs>
         </TabPane>
     </center>

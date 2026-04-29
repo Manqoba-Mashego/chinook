@@ -121,4 +121,41 @@ public class CustomerDAO {
             e.printStackTrace();
         }
     }
+
+    public static List<Customer> getInactiveCustomers() {
+        List<Customer> list = new ArrayList<>();
+
+        String sql = """
+            SELECT c.CustomerId, c.FirstName, c.LastName, c.Email, c.Phone, c.Address, c.City, c.Country
+            FROM customer c
+            LEFT JOIN invoice i ON c.CustomerId = i.CustomerId
+            GROUP BY c.CustomerId
+            HAVING 
+                MAX(i.InvoiceDate) IS NULL
+                OR MAX(i.InvoiceDate) < DATE_SUB(NOW(), INTERVAL 2 YEAR)
+        """;
+
+        try (Connection conn = DBConnection.connect();
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql)) {
+
+            while (rs.next()) {
+                list.add(new Customer(
+                    rs.getInt("CustomerId"),
+                    rs.getString("FirstName"),
+                    rs.getString("LastName"),
+                    rs.getString("Email"),
+                    rs.getString("Phone"),
+                    rs.getString("Address"),
+                    rs.getString("City"),
+                    rs.getString("Country")
+                ));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return list;
+    }
 }

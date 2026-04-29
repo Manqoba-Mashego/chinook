@@ -3,11 +3,16 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.Button?>
 
 <VBox spacing="10" xmlns="http://javafx.com/javafx/26"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.u24589137.u24589137_chinook.controllers.NotificationsController">
+
+    <TextField fx:id="searchField" promptText="Search customers..."/>
+    <Button text="Show Inactive" onAction="#loadInactiveCustomers"/>
+    <Button text="Show All" onAction="#loadAllCustomers"/>
 
     <TableView fx:id="customerTable">
         <columns>
