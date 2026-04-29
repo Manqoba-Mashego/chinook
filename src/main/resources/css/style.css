@@ -1,18 +1,15 @@
-/* Root background */
 .root {
     -fx-background-color: #f5f7fa;
     -fx-font-family: "Segoe UI";
 }
 
-/* General labels */
 .label {
     -fx-font-size: 14px;
     -fx-text-fill: #2c3e50;
 }
 
-/* Buttons */
 .button {
-    -fx-background-color: #3498db;
+    -fx-background-color: #29709f;
     -fx-text-fill: white;
     -fx-font-size: 13px;
     -fx-font-weight: bold;
@@ -22,10 +19,9 @@
 }
 
 .button:hover {
-    -fx-background-color: #2980b9;
+    -fx-background-color: #337bab;
 }
 
-/* Text fields */
 .text-field {
     -fx-background-color: white;
     -fx-border-color: #dcdde1;
@@ -35,7 +31,6 @@
     -fx-font-size: 13px;
 }
 
-/* ComboBox */
 .combo-box {
     -fx-background-color: white;
     -fx-border-color: #dcdde1;
@@ -44,7 +39,6 @@
     -fx-font-size: 13px;
 }
 
-/* TableView */
 .table-view {
     -fx-background-color: white;
     -fx-border-color: #dfe6e9;
@@ -53,7 +47,6 @@
     -fx-padding: 5;
 }
 
-/* Table header */
 .table-view .column-header-background {
     -fx-background-color: #34495e;
     -fx-background-radius: 8 8 0 0;
@@ -69,7 +62,6 @@
     -fx-font-weight: bold;
 }
 
-/* Table rows */
 .table-row-cell {
     -fx-background-color: white;
     -fx-border-color: #ecf0f1;
@@ -79,7 +71,6 @@
     -fx-background-color: #d6eaf8;
 }
 
-/* Tabs */
 .tab-pane .tab-header-area .tab-header-background {
     -fx-background-color: #ecf0f1;
 }

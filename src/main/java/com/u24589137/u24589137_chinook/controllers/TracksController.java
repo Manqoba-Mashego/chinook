@@ -150,6 +150,9 @@ public class TracksController {
         layout.getChildren().add(saveBtn);
 
         Scene scene = new Scene(layout, 300, 400);
+        scene.getStylesheets().add(
+            getClass().getResource("/css/style.css").toExternalForm()
+        );
         stage.setScene(scene);
         stage.show();
     }
